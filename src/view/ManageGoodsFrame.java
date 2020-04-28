@@ -341,7 +341,7 @@ public class ManageGoodsFrame extends javax.swing.JFrame {
 
     private void editGoodsButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editGoodsButton3ActionPerformed
         // TODO add your handling code here:
-         int row = GoodsTable1.getSelectedRow();
+        int row = GoodsTable1.getSelectedRow();
         if (row == -1) {
             JOptionPane.showMessageDialog(ManageGoodsFrame.this, "Bạn chưa chọn hàng nào!");
         } else {

@@ -164,14 +164,14 @@ public class LogInFrame extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-//    public static void main(String args[]) {
-//     
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new LogInFrame().setVisible(true);
-//            }
-//        });
-//    }
+    public static void main(String args[]) {
+     
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new LogInFrame().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogInButton;

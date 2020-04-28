@@ -87,7 +87,7 @@ public class UserDAO {
             int rs = ps.executeUpdate();
             if(user.getRole().equals("Employee")){
                String sql0 = "INSERT INTO SalaryEmployee (IDUser,Month) VALUES (?,?)";
-               for (int i = 0; i < 13; i++) {   
+               for (int i = 1; i < 13; i++) {   
             PreparedStatement ps0 = connection.prepareStatement(sql0);
             ps0.setInt(1, user.getIDUser());
             ps0.setInt(2, i);

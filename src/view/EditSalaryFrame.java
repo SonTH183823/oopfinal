@@ -202,7 +202,7 @@ public class EditSalaryFrame extends javax.swing.JFrame {
         if (BonusTextField.getText().equals("")) {
             BonusTextField.setText("0");
         }
-        String pattern = "^\\d";
+        String pattern = "\\d$";
 
         Pattern r = Pattern.compile(pattern);
 
@@ -211,30 +211,35 @@ public class EditSalaryFrame extends javax.swing.JFrame {
         Matcher m2 = r.matcher(BonusTextField.getText());
         if (!m0.find()) {
             JOptionPane.showMessageDialog(rootPane, "Tiền/ca phải là số");
-
+        }
             if (!m1.find()) {
                 JOptionPane.showMessageDialog(rootPane, "Tổng ca phải là số");
 
+                
+            }
+              
                 if (!m2.find()) {
                     JOptionPane.showMessageDialog(rootPane, "Bonus phải là số");
-                }
-            }
+                
+            
         }
-        user.setShift(ShiftTextField.getText());
-        user.setMoneyShift(Integer.valueOf(tien1caTextField1.getText()));
-        user.setTotalShiftOnMonth(Integer.valueOf(TotalShiftTextField.getText()));
-        user.setBonus(Integer.valueOf(BonusTextField.getText()));
-        userService.updateSalary(user);
-
-        this.dispose();
+        if (m0.find() && m1.find() && m2.find()) {
+            user.setShift(ShiftTextField.getText());
+            user.setBonus(Integer.valueOf(BonusTextField.getText()));
+            user.setMoneyShift(Integer.valueOf(tien1caTextField1.getText()));
+            user.setMoneyShift(Integer.valueOf(tien1caTextField1.getText()));
+            this.dispose();
         JOptionPane.showMessageDialog(rootPane, "Sửa Thành Công!");
         new SalaryEFrame(user.getIDUser(), u.getIDUser()).setVisible(true);
+        }
+
+        
 
     }//GEN-LAST:event_okButtonActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // TODO add your handling code here:
-        
+
         new SalaryEFrame(user.getIDUser(), u.getIDUser()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
