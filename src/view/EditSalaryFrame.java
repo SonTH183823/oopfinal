@@ -209,27 +209,24 @@ public class EditSalaryFrame extends javax.swing.JFrame {
         Matcher m0 = r.matcher(tien1caTextField1.getText());
         Matcher m1 = r.matcher(TotalShiftTextField.getText());
         Matcher m2 = r.matcher(BonusTextField.getText());
+        
         if (!m0.find()) {
             JOptionPane.showMessageDialog(rootPane, "Tiền/ca phải là số");
-        }
-            if (!m1.find()) {
-                JOptionPane.showMessageDialog(rootPane, "Tổng ca phải là số");
-
-                
-            }
-              
-                if (!m2.find()) {
-                    JOptionPane.showMessageDialog(rootPane, "Bonus phải là số");
-                
-            
-        }
-        if (m0.find() && m1.find() && m2.find()) {
+        }else if (!m1.find()) {
+                JOptionPane.showMessageDialog(rootPane, "Tổng ca phải là số");   
+            }else if (!m2.find()) {
+                    JOptionPane.showMessageDialog(rootPane, "Bonus phải là số");  
+        }else{
+        
             user.setShift(ShiftTextField.getText());
             user.setBonus(Integer.valueOf(BonusTextField.getText()));
             user.setMoneyShift(Integer.valueOf(tien1caTextField1.getText()));
             user.setMoneyShift(Integer.valueOf(tien1caTextField1.getText()));
-            this.dispose();
+            user.setMonth(Integer.valueOf(MonthTextField.getText()));
+            
+            userService.updateSalary(user);
         JOptionPane.showMessageDialog(rootPane, "Sửa Thành Công!");
+        this.dispose();
         new SalaryEFrame(user.getIDUser(), u.getIDUser()).setVisible(true);
         }
 

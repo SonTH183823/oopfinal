@@ -15,13 +15,26 @@ public class JDBCConnection {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection connection = DriverManager.getConnection(url, user, pass);
-           
+            
             return DriverManager.getConnection(url,user,pass);
                     
+                
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(JDBCConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
-     }  
-    
+        
+        
+        
+     }
+//     public static void main(String[] args) throws SQLException {
+//        Connection c = getConnection();
+//        if (c != null) {
+//  System.out.println("Thanh cong");
+//    }else{
+//            System.out.println("ThatBai");
+//        }
+//        
+//     }
 }

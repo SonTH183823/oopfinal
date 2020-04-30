@@ -65,7 +65,7 @@ public class SalaryDAO {
            
             
             int rs = ps.executeUpdate();
-
+            
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

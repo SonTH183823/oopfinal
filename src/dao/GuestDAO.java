@@ -19,7 +19,7 @@ public class GuestDAO {
         List<Guest> listguest = new ArrayList<>();
         try {
 
-            String sql = "SELECT * FROM Guest ";
+            String sql = "SELECT * FROM Guest ORDER BY accumulatedPoints DESC ";
             Connection connection = getConnection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery();
@@ -43,7 +43,7 @@ public class GuestDAO {
         List<Guest> listGuests = new ArrayList<>();
         try {
 
-            String sql = "SELECT * FROM Guest WHERE name like N'%"+name+"%'";
+            String sql = "SELECT * FROM Guest WHERE name like N'%"+name+"%' ORDER BY accumulatedPoints DESC ";
             Connection connection = getConnection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery();

@@ -43,6 +43,7 @@ public class UserDAO {
 
         return null;
     }
+
     public List<User> getAllUserNames() {
         List<User> listUser = new ArrayList<>();
         try {
@@ -51,7 +52,7 @@ public class UserDAO {
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
-                User user = new User();                
+                User user = new User();
                 user.setUserName(resultSet.getString("UserName"));
                 user.setPassword(resultSet.getString("Password"));
                 user.setRole(resultSet.getString("Role"));
@@ -64,7 +65,7 @@ public class UserDAO {
         }
 
         return null;
-        }
+    }
 
     public void addUser(User user) {
         try {
@@ -83,23 +84,22 @@ public class UserDAO {
             ps.setString(7, user.getUserName());
             ps.setString(8, user.getPassword());
             ps.setString(9, user.getRole());
-            
+
             int rs = ps.executeUpdate();
-            if(user.getRole().equals("Employee")){
-               String sql0 = "INSERT INTO SalaryEmployee (IDUser,Month) VALUES (?,?)";
-               for (int i = 1; i < 13; i++) {   
-            PreparedStatement ps0 = connection.prepareStatement(sql0);
-            ps0.setInt(1, user.getIDUser());
-            ps0.setInt(2, i);
-            int rs0 = ps0.executeUpdate();
+            if (user.getRole().equals("Employee")) {
+                String sql0 = "INSERT INTO SalaryEmployee (IDUser,Month) VALUES (?,?)";
+                for (int i = 1; i < 13; i++) {
+                    PreparedStatement ps0 = connection.prepareStatement(sql0);
+                    ps0.setInt(1, user.getIDUser());
+                    ps0.setInt(2, i);
+                    int rs0 = ps0.executeUpdate();
                 }
             }
-            
+
 //                      String sql0 = "INSERT INTO SalaryEmployee (IDUser) VALUES (?)";
 //            PreparedStatement ps0 = connection.prepareStatement(sql0);
 //            ps0.setInt(1, user.getIDUser());
 //            int rs0 = ps0.executeUpdate();
-
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -113,13 +113,11 @@ public class UserDAO {
             PreparedStatement ps1 = connection.prepareStatement(sql1);
             ps1.setString(1, IDUser);
             int rs1 = ps1.executeUpdate();
-            
+
             String sql = "DELETE FROM Useroop WHERE IDUser = ? ";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, IDUser);
             int rs = ps.executeUpdate();
-            
-            
 
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -143,14 +141,31 @@ public class UserDAO {
             ps.setString(7, user.getPassword());
             ps.setString(8, user.getRole());
             int rs = ps.executeUpdate();
+            if (user.getRole().equals("Employee")) {
+                String sql0 = "INSERT INTO SalaryEmployee (IDUser,Month) VALUES (?,?)";
+                for (int i = 1; i < 13; i++) {
+                    PreparedStatement ps0 = connection.prepareStatement(sql0);
+                    ps0.setInt(1, user.getIDUser());
+                    ps0.setInt(2, i);
+                    int rs0 = ps0.executeUpdate();
+                }
+            } else {
+                String sql0 = "DELETE FROM SalaryEmployee WHERE IDUser = ? ";
+                
+                    PreparedStatement ps0 = connection.prepareStatement(sql0);
+                    ps0.setInt(1, user.getIDUser());
+                    int rs0 = ps0.executeUpdate();
+                
+            }
 
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
+
     public User getUserByID(int IDUser) {
-        
+
         try {
 
             String sql = "SELECT * FROM Useroop WHERE IDUser =?";
@@ -177,8 +192,8 @@ public class UserDAO {
 
         return null;
     }
-    
-     public List<User> getSalaryEmployeeByID(int IDUser) {
+
+    public List<User> getSalaryEmployeeByID(int IDUser) {
         List<User> listE = new ArrayList<>();
         try {
 
@@ -198,7 +213,7 @@ public class UserDAO {
                 user.setTotalShiftOnMonth(resultSet.getInt("TotalShiftOnMonth"));
                 user.setMoneyShift(resultSet.getInt("MoneyShift"));
                 user.setBonus(resultSet.getInt("Bonus"));
-               
+
                 listE.add(user);
 
             }
@@ -209,14 +224,14 @@ public class UserDAO {
 
         return null;
     }
-     
-     public List<User> getAllEmployees() {
+
+    public List<User> getAllEmployees() {
         List<User> listE = new ArrayList<>();
         try {
 
             String sql = "select IDUser , FullName, Gender,DOB,Address,"
                     + " Phone from Useroop where Role like 'Employee'";
-                    
+
             Connection connection = getConnection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery();
@@ -238,8 +253,8 @@ public class UserDAO {
 
         return null;
     }
-     
-     public void updateUserPassword(User user) {
+
+    public void updateUserPassword(User user) {
         try {
             Connection connection = getConnection();
             String sql = "UPDATE Useroop SET Password=? WHERE IDUser =?";
@@ -247,7 +262,7 @@ public class UserDAO {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(2, user.getIDUser());
             ps.setString(1, user.getPassword());
-            
+
             int rs = ps.executeUpdate();
 
         } catch (SQLException ex) {
