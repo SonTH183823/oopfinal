@@ -96,7 +96,7 @@ public class LogInFrame extends javax.swing.JFrame {
         jPanel1.add(LogInButton);
         LogInButton.setBounds(230, 250, 100, 30);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\SON.TH183823\\Documents\\NetBeansProjects\\QLBHoop16\\loginOOP.jpeg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/loginOOP.jpeg"))); // NOI18N
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, -10, 420, 400);
 
