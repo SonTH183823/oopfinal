@@ -153,11 +153,12 @@ public class ManageGoodsFrame extends javax.swing.JFrame {
             GoodsTable1.getColumnModel().getColumn(0).setMinWidth(50);
             GoodsTable1.getColumnModel().getColumn(0).setPreferredWidth(50);
             GoodsTable1.getColumnModel().getColumn(0).setMaxWidth(50);
-            GoodsTable1.getColumnModel().getColumn(1).setMinWidth(100);
-            GoodsTable1.getColumnModel().getColumn(1).setPreferredWidth(100);
-            GoodsTable1.getColumnModel().getColumn(1).setMaxWidth(100);
-            GoodsTable1.getColumnModel().getColumn(2).setMinWidth(70);
-            GoodsTable1.getColumnModel().getColumn(2).setPreferredWidth(70);
+            GoodsTable1.getColumnModel().getColumn(1).setMinWidth(200);
+            GoodsTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
+            GoodsTable1.getColumnModel().getColumn(1).setMaxWidth(200);
+            GoodsTable1.getColumnModel().getColumn(2).setMinWidth(90);
+            GoodsTable1.getColumnModel().getColumn(2).setPreferredWidth(90);
+            GoodsTable1.getColumnModel().getColumn(2).setMaxWidth(90);
             GoodsTable1.getColumnModel().getColumn(3).setMinWidth(70);
             GoodsTable1.getColumnModel().getColumn(3).setPreferredWidth(70);
             GoodsTable1.getColumnModel().getColumn(3).setMaxWidth(70);

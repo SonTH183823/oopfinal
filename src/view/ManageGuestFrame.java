@@ -20,7 +20,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         u = userService.getUserByID(IDuser);
-        defaultTableModel = new DefaultTableModel();
+        
         defaultTableModel = (DefaultTableModel) GuestTable1.getModel();
         guestService = new GuestService();
         List<Guest> listGuest = guestService.getAllGuests();
