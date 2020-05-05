@@ -26,7 +26,7 @@ public class OrderDAO {
         List<Order> listOrder = new ArrayList<>();
         try {
 
-            String sql = "SELECT * FROM Order ";
+            String sql = "SELECT * FROM Orderoop";
             Connection connection = getConnection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -55,7 +55,8 @@ public class OrderDAO {
 
         try {
             List<Order> listOrder = new ArrayList<>();
-            String sql = "SELECT * FROM Order Where IDOrder =?";
+            
+            String sql = "SELECT * FROM Orderoop Where IDOrder =?";
             Connection connection = getConnection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, IDOrder);
@@ -85,7 +86,7 @@ public class OrderDAO {
         try {
             Connection connection = getConnection();
 
-            String sql = "INSERT INTO Order (IDOrder,IDDrinks,IDUser,IDGuest,"
+            String sql = "INSERT INTO Orderoop (IDOrder,IDDrinks,IDUser,IDGuest,"
                     + "Amount,Note,TableNumber,Date)  VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, o.getIDOrder());
@@ -106,7 +107,7 @@ public class OrderDAO {
     public void updateOrder(Order o) {
         try {
             Connection connection = getConnection();
-            String sql = "UPDATE Order SET IDDrinks  =?,IDUser =?,"
+            String sql = "UPDATE Orderoop SET IDDrinks  =?,IDUser =?,"
                     + "IDGuest = ?,Amount = ?,Note = ?,TableNumber = ?,Date = ?"
                     + " WHERE IDOrder =?";
 
@@ -131,7 +132,7 @@ public class OrderDAO {
     public void removeOder(String IDOrder) {
         try {
             Connection connection = getConnection();
-            String sql1 = "DELETE FROM Order WHERE IDOrder = ? ";
+            String sql1 = "DELETE FROM Orderoop WHERE IDOrder = ? ";
             PreparedStatement ps1 = connection.prepareStatement(sql1);
             ps1.setString(1, IDOrder);
             int rs1 = ps1.executeUpdate();
@@ -144,7 +145,7 @@ public class OrderDAO {
     public void removeDrinks (String IDDrinks) {
         try {
             Connection connection = getConnection();
-            String sql1 = "DELETE FROM Order WHERE IDDrinks = ? ";
+            String sql1 = "DELETE FROM Orderoop WHERE IDDrinks = ? ";
             PreparedStatement ps1 = connection.prepareStatement(sql1);
             ps1.setString(1, IDDrinks);
             int rs1 = ps1.executeUpdate();

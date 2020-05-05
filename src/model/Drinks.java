@@ -7,15 +7,9 @@ package model;
 
 
 public class Drinks {
-    private  int IDdrinks, price , number ;
+    private  int IDdrinks, price  ;
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
+   
     private  String Name;
 
     public int getIDdrinks() {
@@ -45,11 +39,11 @@ public class Drinks {
     public Drinks() {
     }
 
-    public Drinks(int IDdrinks, int price, String Name , int number) {
+    public Drinks(int IDdrinks, int price, String Name ) {
         this.IDdrinks = IDdrinks;
         this.price = price;
         this.Name = Name;
-        this.number = number;
+        
     }
     
 }

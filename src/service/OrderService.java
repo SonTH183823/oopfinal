@@ -17,9 +17,9 @@ public class OrderService {
     public List<Order> getAllOrder(){
         return orderDAO.getAllOrder();
     }
-//    public Order getOrderByIDOrder(int IDOrder){
-//        return  orderDAO.getOrderByID(IDOrder);
-//    }
+    public List<Order> getOrderByID(int IDOrder){
+        return  orderDAO.getOrderByID(IDOrder);
+    }
     public void addOrder(Order o){
         orderDAO.addOrder(o);
     }

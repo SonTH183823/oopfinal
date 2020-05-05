@@ -12,10 +12,12 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Drinks;
+import model.Guest;
 import model.LDC;
 import model.Order;
 import model.User;
 import service.DrinksService;
+import service.GuestService;
 import service.LDCService;
 import service.OrderService;
 import service.UserService;
@@ -35,10 +37,13 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
     DrinksService drinksService;
     LDC ldc;
     LDCService lDCService = new LDCService();
+    Guest guest;
+    GuestService guestService;
 
     public MenuEmployeeFrame(int IDuser) {
         initComponents();
         this.setLocationRelativeTo(null);
+
         //taikhoan
         userService = new UserService();
         user = userService.getUserByID(IDuser);
@@ -60,10 +65,10 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
 
         drinksService = new DrinksService();
         List<Drinks> listdrinks = drinksService.getAllDrinks();
-        for (Drinks listdrink : listdrinks) {
+        listdrinks.forEach((listdrink) -> {
             dlm1.addElement(listdrink.getIDdrinks() + "     "
                     + listdrink.getName() + "       " + listdrink.getPrice() + "đ");
-        }
+        });
         nameList.setModel(dlm1);
     }
 
@@ -71,6 +76,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -101,6 +107,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         DrinksSpinner = new javax.swing.JSpinner();
         OkDrinks = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
@@ -261,12 +268,23 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Tên Khách hàng");
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel10.setText("Số ĐT");
 
+        buttonGroup1.add(DathanhtoanRadioButton);
+        DathanhtoanRadioButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         DathanhtoanRadioButton.setText("Đã Thanh Toán");
+        DathanhtoanRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DathanhtoanRadioButtonActionPerformed(evt);
+            }
+        });
 
+        buttonGroup1.add(ChuaThanhtoanRadioButton);
+        ChuaThanhtoanRadioButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ChuaThanhtoanRadioButton.setSelected(true);
         ChuaThanhtoanRadioButton.setText("Thanh Toán sau");
         ChuaThanhtoanRadioButton.addActionListener(new java.awt.event.ActionListener() {
@@ -275,6 +293,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel12.setText("Số Bàn");
 
         Refesh.setText("Refesh");
@@ -299,7 +318,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel43.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel43.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel43.setText("Số Lượng");
 
         DrinksSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
@@ -325,35 +344,36 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(Refesh)
-                                .addGap(18, 18, 18)
-                                .addComponent(BillButton))
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator1)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(Refesh, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(BillButton))))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nameGuestTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel10)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGap(75, 75, 75)
+                                        .addComponent(tableNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(DathanhtoanRadioButton)
                                     .addComponent(ChuaThanhtoanRadioButton)
-                                    .addComponent(jLabel12)
-                                    .addComponent(phoneGuestTextField))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(nameGuestTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                    .addComponent(phoneGuestTextField))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(RemoveDButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(NameDrinkstextField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
                         .addComponent(jLabel43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(DrinksSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(tableNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(DrinksSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(OkDrinks, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(OkDrinks, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -369,6 +389,8 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tableNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12))
@@ -380,14 +402,14 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(phoneGuestTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(8, 8, 8)
                         .addComponent(DathanhtoanRadioButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(ChuaThanhtoanRadioButton)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Refesh)
-                            .addComponent(BillButton)))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Refesh, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                            .addComponent(BillButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -398,13 +420,11 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 709, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
+            .addGap(0, 307, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -466,12 +486,12 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -479,6 +499,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
 
         TaiKhoanPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông Tin Tài Khoản", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
+        ChangePassButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ChangePassButton.setText("Đổi Mật Khẩu");
         ChangePassButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -486,6 +507,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
             }
         });
 
+        ThoatButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ThoatButton.setText("Đăng Xuất");
         ThoatButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -601,6 +623,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
                 .addGap(53, 53, 53))
         );
 
+        editInforButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         editInforButton.setText("Sửa Thông Tin");
         editInforButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -621,7 +644,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
                         .addGap(176, 176, 176)
                         .addComponent(editInforButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ThoatButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ThoatButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         TaiKhoanPanelLayout.setVerticalGroup(
@@ -633,7 +656,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
                 .addGroup(TaiKhoanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(editInforButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ChangePassButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(ThoatButton))
+                    .addComponent(ThoatButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -708,7 +731,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
         if (!NameDrinkstextField.getText().equals("")) {
             String a = nameList.getSelectedValue().toString();
             String[] b = a.split("    ", 0);
-            int c = 0;
+
             ldc = new LDC();
             List<LDC> listLDCtemp = lDCService.getAllLDC();
             for (LDC id : listLDCtemp) {
@@ -718,26 +741,32 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
                     if (confirm == JOptionPane.YES_OPTION) {
                         lDCService.removeDrinks(id.getNameDrinks());
                         ldc.setIDDrinks(Integer.valueOf(b[0]));
-                        c =1;
+                        ldc.setAmount((int) DrinksSpinner.getValue());
+                    } else {
+                        lDCService.removeDrinks(id.getNameDrinks());
+                        ldc.setIDDrinks(Integer.valueOf(b[0]));
+                        ldc.setAmount(id.getAmount());
+
                     }
                     break;
-                }else
-                    ldc.setIDDrinks(Integer.valueOf(b[0]));                
+                } else {
+                    ldc.setIDDrinks(Integer.valueOf(b[0]));
+                    ldc.setAmount((int) DrinksSpinner.getValue());
+                }
             }
-            if(ldc.getIDDrinks() == 0){
+            if (ldc.getIDDrinks() == 0) {
                 ldc.setIDDrinks(Integer.valueOf(b[0]));
+                ldc.setAmount((int) DrinksSpinner.getValue());
             }
-                    
-            ldc.setNameDrinks(NameDrinkstextField.getText());
-            ldc.setAmount((int) DrinksSpinner.getValue());
+            ldc.setNameDrinks(b[1]);
 
             lDCService.addDrinks(ldc);
             dtm = (DefaultTableModel) listchoiceTable.getModel();
             dtm.setRowCount(0);
             List<LDC> listLDC = lDCService.getAllLDC();
-            for (LDC i : listLDC) {
+            listLDC.forEach((i) -> {
                 dtm.addRow(new Object[]{i.getNameDrinks(), i.getAmount()});
-            }
+            });
         } else {
             JOptionPane.showMessageDialog(rootPane, "Bạn chưa chọn đồ!");
         }
@@ -753,8 +782,8 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
         tableNumberTextField.setText("");
         nameGuestTextField.setText("");
         phoneGuestTextField.setText("");
-        if(listchoiceTable.getRowCount() != 0 ){
-        dtm.setRowCount(0);
+        if (listchoiceTable.getRowCount() != 0) {
+            dtm.setRowCount(0);
         }
         lDCService.removeAll();
     }//GEN-LAST:event_RefeshActionPerformed
@@ -774,9 +803,9 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
             lDCService.removeDrinks(name);
             dtm.setRowCount(0);
             List<LDC> listLDC = lDCService.getAllLDC();
-            for (LDC i : listLDC) {
+            listLDC.forEach((i) -> {
                 dtm.addRow(new Object[]{i.getNameDrinks(), i.getAmount()});
-            }
+            });
         }
 
     }//GEN-LAST:event_RemoveDButtonActionPerformed
@@ -794,26 +823,97 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
 
     private void BillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BillButtonActionPerformed
         // TODO add your handling code here:
-        
-        if(tableNumberTextField.getText().equals("")
-                ||nameGuestTextField.getText().equals("")
-                ||phoneGuestTextField.getText().equals("")){
+
+        guestService = new GuestService();
+        if (tableNumberTextField.getText().equals("")
+                || nameGuestTextField.getText().equals("")
+                || phoneGuestTextField.getText().equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập đầy đủ thông tin!");
-        }else{
+        } else {
             String pattern = "\\d$";
             Pattern r = Pattern.compile(pattern);
             Matcher m = r.matcher(tableNumberTextField.getText());
             String pattern1 = "^0\\d{9}$";
             Pattern r1 = Pattern.compile(pattern1);
             Matcher m1 = r1.matcher(phoneGuestTextField.getText());
-            if(m.find() && m1.find()){
-                
-            }else{
-                 JOptionPane.showMessageDialog(rootPane, "Số Bàn hoặc Số Điện Thoại không hợp lệ!");
+            if (m.find() && m1.find()) {
+                guest = guestService.getGuestsByPhone(phoneGuestTextField.getText());
+                if (guest.getIDGuest() == 0) {
+                    List<Guest> listGuest = guestService.getAllGuests();
+                    int IDGuest = 1;
+                    boolean checkID;
+                    while (true) {
+                        checkID = false;
+                        for (Guest g : listGuest) {
+                            if (IDGuest == g.getIDGuest()) {
+                                checkID = true;
+                                break;
+                            }
+                        }
+                        if (!checkID) {
+                            break;
+                        }
+                        IDGuest++;
+                    }
+                    guest.setIDGuest(IDGuest);
+                    guest.setName(nameGuestTextField.getText());
+                    guest.setPhone(phoneGuestTextField.getText());
+                    guestService.addGuest(guest);
+                } else {
+                    guest.setAccumulatedPoints(guest.getAccumulatedPoints() + 1);
+                    guestService.updateGoods(guest);
+                }
+                orderService = new OrderService();
+                List<Order> listOrder = orderService.getAllOrder();
+                    int IDorder = 1;
+                    boolean checkID;
+                    while (true) {
+                        checkID = false;
+                        for (Order g : listOrder) {
+                            if (IDorder == g.getIDOrder()) {
+                                checkID = true;
+                                break;
+                            }
+                        }
+                        if (!checkID) {
+                            break;
+                        }
+                        IDorder++;
+                    }
+                    order = new Order();                    
+                    order.setIDOrder(IDorder);
+                    List<LDC> listLDC = lDCService.getAllLDC();
+                    for (LDC ldc : listLDC) {
+                    order.setIDDrinks(ldc.getIDDrinks());
+                    order.setAmount(ldc.getAmount());
+                    order.setIDGuest(guest.getIDGuest());
+                   
+                    order.setIDUser(user.getIDUser());
+                    order.setDate(String.valueOf(java.time.LocalDate.now()));
+                    if(DathanhtoanRadioButton.isSelected()){
+                      order.setNote("Đã Thanh Toán");  
+                    }
+                    if(ChuaThanhtoanRadioButton.isSelected()){
+                    order.setNote("Thanh toán sau");
+                    }
+                    order.setTableNumber(Integer.valueOf(tableNumberTextField.getText()));
+                    orderService.addOrder(order);
+                    } 
+                new BillFrame(user.getIDUser(), order.getIDOrder()).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Số Bàn hoặc Số Điện Thoại không hợp lệ!");
             }
         }
-        
+                if (listchoiceTable.getRowCount() != 0) {
+            dtm.setRowCount(0);
+        }
+        lDCService.removeAll();
+
     }//GEN-LAST:event_BillButtonActionPerformed
+
+    private void DathanhtoanRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DathanhtoanRadioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DathanhtoanRadioButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -833,6 +933,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel SDTLabel;
     private javax.swing.JPanel TaiKhoanPanel;
     private javax.swing.JButton ThoatButton;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel dobLabel4;
     private javax.swing.JButton editInforButton;
     private javax.swing.JButton jButton1;
@@ -863,6 +964,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable listchoiceTable;
