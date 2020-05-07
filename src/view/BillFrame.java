@@ -91,6 +91,56 @@ public class BillFrame extends javax.swing.JFrame {
         bill.setDate(Datelabel.getText());
         billService.addBill(bill);
     }
+    public BillFrame(int IDOrder) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        
+        orderService = new OrderService();
+        List<Order> orders = orderService.getOrderByID(IDOrder);
+        
+        Order [] a = new Order[orders.size()];
+        orders.toArray(a);
+        user = userService.getUserByID(a[0].getIDUser());
+        guest = guestService.getGuestsByID(a[0].getIDGuest());
+        Datelabel.setText(a[0].getDate());
+        IDOrderLabel.setText(String.valueOf(a[0].getIDOrder()));
+        NameGuestLabel.setText(guest.getName());
+       	PhoneGuestLabel.setText(guest.getPhone());
+        TableNumberLabel.setText(String.valueOf(a[0].getTableNumber()));
+        ThanhToanLabel.setText("-"+a[0].getNote());
+        NameUserLabel.setText(user.getFullName());
+        
+        
+
+ 
+        dtm = (DefaultTableModel) listChoiceTable.getModel();     
+            int tien = 0 , tongtien = 0;
+            for (Order o : orders) {
+            drinks = drinksService.getDrinksByID(o.getIDDrinks());
+            tien = o.getAmount() * drinks.getPrice();
+            tongtien += tien;
+            dtm.addRow(new Object[]{drinks.getIDdrinks() , 
+                drinks.getName(), o.getAmount(),tien +"đ"});
+            }
+        TotalMoneyLabel.setText(tongtien +"đ");
+        double thanhtien = 0;
+        if(guest.getAccumulatedPoints()==0){
+            DiscountLabel.setText("0%");
+            thanhtien = tongtien;
+            MoneyLabel.setText((int)thanhtien +"đ");
+            
+        }else if(guest.getAccumulatedPoints()>0
+                && guest.getAccumulatedPoints() <= 5){
+            DiscountLabel.setText("5%");
+           thanhtien =  tongtien*0.95;
+            MoneyLabel.setText((int)thanhtien +"đ");
+        }else{
+            DiscountLabel.setText("10%");
+             thanhtien = tongtien*0.9;
+            MoneyLabel.setText((int)thanhtien +"đ");
+        }
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

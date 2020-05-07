@@ -551,7 +551,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        refreshButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        refreshButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         refreshButton.setText("Refesh");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -559,7 +559,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
 
-        chiTietButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        chiTietButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         chiTietButton.setText("Chi tiết");
         chiTietButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -591,7 +591,6 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
         listBillTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        listBillTable.setShowHorizontalLines(false);
         jScrollPane2.setViewportView(listBillTable);
         if (listBillTable.getColumnModel().getColumnCount() > 0) {
             listBillTable.getColumnModel().getColumn(0).setMinWidth(100);
@@ -602,7 +601,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             listBillTable.getColumnModel().getColumn(1).setMaxWidth(150);
         }
 
-        XoaBillButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        XoaBillButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         XoaBillButton.setText("Xóa Hóa Đơn");
         XoaBillButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -610,7 +609,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
 
-        XoatatcaBill.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        XoatatcaBill.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         XoatatcaBill.setText("Xóa Tất cả");
         XoatatcaBill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -633,17 +632,15 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(XoaBillButton)
-                                .addGap(34, 34, 34)
-                                .addComponent(XoatatcaBill, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(chiTietButton, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(refreshButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(chiTietButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(XoaBillButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(XoatatcaBill, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(refreshButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -661,7 +658,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(refreshButton, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                             .addComponent(chiTietButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(XoaBillButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(XoatatcaBill, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1203,7 +1200,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
         } else {
 
             int IDOrder = (Integer) listBillTable.getValueAt(row, 0);
-            new BillFrame(user.getIDUser(), IDOrder).setVisible(true);
+            new BillFrame( IDOrder).setVisible(true);
 
         }
 
