@@ -32,7 +32,10 @@ public class editUserFrame extends javax.swing.JFrame {
 
         IDEtextField.setText(String.valueOf(user.getIDUser()));
         fullNameTextField.setText(user.getFullName());        
-        String b = user.getGender().replaceAll("\\s","");        
+        String b = user.getGender().replaceAll("\\s",""); 
+        if (b.equals("Nam")) {           
+            genderComboBox.setSelectedIndex(0);            
+        }
         if (b.equals("Nữ")) {           
             genderComboBox.setSelectedItem("Nữ");            
         }
@@ -71,7 +74,6 @@ public class editUserFrame extends javax.swing.JFrame {
         BackButton = new javax.swing.JButton();
         userNameTextField = new javax.swing.JTextField();
         passwordTextField = new javax.swing.JTextField();
-        genderComboBox = new javax.swing.JComboBox<>();
         editEmployeeButton = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -86,6 +88,7 @@ public class editUserFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         EmployeeRadioButton = new javax.swing.JRadioButton();
         AdminRadiobutton = new javax.swing.JRadioButton();
+        genderComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản Lý User");
@@ -100,16 +103,6 @@ public class editUserFrame extends javax.swing.JFrame {
         BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
-            }
-        });
-
-        genderComboBox.setMaximumRowCount(3);
-        genderComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác", " " }));
-        genderComboBox.setEditor(null);
-        genderComboBox.setName(""); // NOI18N
-        genderComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genderComboBoxActionPerformed(evt);
             }
         });
 
@@ -166,6 +159,8 @@ public class editUserFrame extends javax.swing.JFrame {
             }
         });
 
+        genderComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -196,7 +191,7 @@ public class editUserFrame extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(genderComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(genderComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(IDEtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,10 +283,6 @@ public class editUserFrame extends javax.swing.JFrame {
         new ListUserFrame(u.getIDUser()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
-
-    private void genderComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_genderComboBoxActionPerformed
 
     private void editEmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEmployeeButtonActionPerformed
         // TODO add your handling code here:

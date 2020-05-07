@@ -23,13 +23,12 @@ public class ListUserFrame extends javax.swing.JFrame {
         defaultTableModel = new DefaultTableModel();
         userService = new UserService();
         user = userService.getUserByID(IDuser);
-        defaultTableModel= (DefaultTableModel) UserTable.getModel();
-
+        defaultTableModel = (DefaultTableModel) UserTable.getModel();
 
         List<User> listUser = userService.getAllUser();
         listUser.forEach((e) -> {
             defaultTableModel.addRow(new Object[]{e.getIDUser(),
-                 e.getFullName(), e.getGender(), e.getDob(), e.getAddress(), e.getPhone(),
+                e.getFullName(), e.getGender(), e.getDob(), e.getAddress(), e.getPhone(),
                 e.getUserName(), e.getPassword(), e.getRole()});
         });
     }
@@ -217,8 +216,8 @@ public class ListUserFrame extends javax.swing.JFrame {
         List<User> listUser = userService.getAllUser();
         listUser.forEach((e) -> {
             defaultTableModel.addRow(new Object[]{e.getIDUser(),
-                 e.getFullName(), e.getGender(), e.getDob(), e.getAddress(), e.getPhone(),
-                e.getUserName(), e.getPassword(),e.getRole()});
+                e.getFullName(), e.getGender(), e.getDob(), e.getAddress(), e.getPhone(),
+                e.getUserName(), e.getPassword(), e.getRole()});
         });
 
     }//GEN-LAST:event_refeshButtonActionPerformed
@@ -233,15 +232,19 @@ public class ListUserFrame extends javax.swing.JFrame {
                     "Bạn chắc chắn muốn xóa không?");
             if (confirm == JOptionPane.YES_OPTION) {
                 String IDUser = String.valueOf(UserTable.getValueAt(row, 0));
-                userService.removeUser(IDUser);
-                defaultTableModel.setRowCount(0);
-                List<User> listUser = userService.getAllUser();
-                listUser.forEach((e) -> {
-                    defaultTableModel.addRow(new Object[]{e.getIDUser(),
-                         e.getFullName(), e.getGender(), e.getDob(), e.getAddress(), e.getPhone(),
-                        e.getUserName(), e.getPassword(), e.getRole()});
-                });
-                JOptionPane.showMessageDialog(ListUserFrame.this, "Xóa thành công");
+                if (Integer.valueOf(IDUser) == user.getIDUser()) {
+                    JOptionPane.showMessageDialog(rootPane, "Không thể xóa chính bạn!");
+                } else {
+                    userService.removeUser(IDUser);
+                    defaultTableModel.setRowCount(0);
+                    List<User> listUser = userService.getAllUser();
+                    listUser.forEach((e) -> {
+                        defaultTableModel.addRow(new Object[]{e.getIDUser(),
+                            e.getFullName(), e.getGender(), e.getDob(), e.getAddress(), e.getPhone(),
+                            e.getUserName(), e.getPassword(), e.getRole()});
+                    });
+                    JOptionPane.showMessageDialog(ListUserFrame.this, "Xóa thành công");
+                }
             }
         }
     }//GEN-LAST:event_removeEButtonActionPerformed
@@ -252,12 +255,12 @@ public class ListUserFrame extends javax.swing.JFrame {
         if (row == -1) {
             JOptionPane.showMessageDialog(ListUserFrame.this, "Bạn chưa chọn hàng nào!");
         } else {
-            
+
             int IDUser = (Integer) UserTable.getValueAt(row, 0);
-                new editUserFrame(IDUser,user.getIDUser()).setVisible(true);
+            new editUserFrame(IDUser, user.getIDUser()).setVisible(true);
             this.dispose();
-        }                   
-    
+        }
+
     }//GEN-LAST:event_EditEButtonActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
@@ -266,7 +269,6 @@ public class ListUserFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
