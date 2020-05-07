@@ -265,16 +265,7 @@ public class ListUserFrame extends javax.swing.JFrame {
         new MenuAdminFrame(user.getIDUser()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
-//    public static void main(String args[]) {
-//      
-//        java.awt.EventQueue.invokeLater(() -> {
-//            new ListUserFrame().setVisible(true);
-//        });
-//    }
 
-    /**
-     * @param args the command line arguments
-     */
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
