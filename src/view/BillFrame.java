@@ -7,10 +7,12 @@ package view;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import model.Bill;
 import model.Drinks;
 import model.Guest;
 import model.Order;
 import model.User;
+import service.BillService;
 import service.DrinksService;
 import service.GuestService;
 import service.OrderService;
@@ -34,6 +36,8 @@ public class BillFrame extends javax.swing.JFrame {
     DrinksService drinksService = new DrinksService() ;
     Guest guest;
     GuestService guestService = new GuestService();
+    Bill bill = new Bill();
+    BillService billService = new BillService();
     
     
     public BillFrame(int IDUser , int IDOrder) {
@@ -66,21 +70,26 @@ public class BillFrame extends javax.swing.JFrame {
                 drinks.getName(), o.getAmount(),tien +"đ"});
             }
         TotalMoneyLabel.setText(tongtien +"đ");
+        double thanhtien = 0;
         if(guest.getAccumulatedPoints()==0){
             DiscountLabel.setText("0%");
-            MoneyLabel.setText(tongtien +"đ");
+            thanhtien = tongtien;
+            MoneyLabel.setText((int)thanhtien +"đ");
             
         }else if(guest.getAccumulatedPoints()>0
                 && guest.getAccumulatedPoints() <= 5){
             DiscountLabel.setText("5%");
-            double thanhtien = tongtien*0.95;
-            MoneyLabel.setText(thanhtien +"đ");
+           thanhtien =  tongtien*0.95;
+            MoneyLabel.setText((int)thanhtien +"đ");
         }else{
             DiscountLabel.setText("10%");
-            double thanhtien = tongtien*0.9;
-            MoneyLabel.setText(thanhtien +"đ");
+             thanhtien = tongtien*0.9;
+            MoneyLabel.setText((int)thanhtien +"đ");
         }
-        
+        bill.setIDOrder(IDOrder);
+        bill.setDoanhThu((int)thanhtien);
+        bill.setDate(Datelabel.getText());
+        billService.addBill(bill);
     }
 
     /**

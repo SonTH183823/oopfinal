@@ -14,6 +14,10 @@ public class Order {
     private int IDOrder, IDDrinks, IDUser, IDGuest, amount, TableNumber;
     private String note, Date;
 
+    
+
+   
+
     public int getIDOrder() {
         return IDOrder;
     }
@@ -92,7 +96,7 @@ public class Order {
     }
 
     public Order(int IDOrder, int IDDrinks, int IDUser, String date,
-            int IDGuest, int amount, int TableNumber, String note) {
+            int IDGuest, int amount, int TableNumber, String note ) {
         this.IDOrder = IDOrder;
         this.IDDrinks = IDDrinks;
         this.IDUser = IDUser;
@@ -101,6 +105,7 @@ public class Order {
         this.TableNumber = TableNumber;
         this.note = note;
         this.Date = date;
+        
     }
 
 }

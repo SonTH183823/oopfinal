@@ -40,6 +40,7 @@ public class OrderDAO {
                 b.setNote(rs.getString("Note"));
                 b.setTableNumber(rs.getInt("TableNumber"));
                 b.setDate(rs.getString("Date"));
+                
                 listOrder.add(b);
             }
 
@@ -71,6 +72,7 @@ public class OrderDAO {
                 b.setNote(rs.getString("Note"));
                 b.setTableNumber(rs.getInt("TableNumber"));
                 b.setDate(rs.getString("Date"));
+                
                 listOrder.add(b);
             }
             return listOrder;
@@ -97,6 +99,7 @@ public class OrderDAO {
             ps.setString(6, o.getNote());
             ps.setInt(7, o.getTableNumber());
             ps.setString(8, o.getDate());
+            
 
             int rs = ps.executeUpdate();
         } catch (SQLException ex) {
@@ -108,7 +111,7 @@ public class OrderDAO {
         try {
             Connection connection = getConnection();
             String sql = "UPDATE Orderoop SET IDDrinks  =?,IDUser =?,"
-                    + "IDGuest = ?,Amount = ?,Note = ?,TableNumber = ?,Date = ?"
+                    + "IDGuest = ?,Amount = ?,Note = ?,TableNumber = ?,Date = ?,"
                     + " WHERE IDOrder =?";
 
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -120,7 +123,7 @@ public class OrderDAO {
             ps.setString(5, o.getNote());
             ps.setInt(6, o.getTableNumber());
             ps.setString(7, o.getDate());
-
+          
             int rs = ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -154,5 +157,52 @@ public class OrderDAO {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+//    public List<Order> getOrderByDate(String date)
+//    {
+//        List<Order> listOrder = new ArrayList<>();
+//        try {
+//
+//            String sql = " " ;
+//            Connection connection = getConnection();
+//            PreparedStatement ps = connection.prepareStatement(sql);
+//            ResultSet rs = ps.executeQuery();
+//            while (rs.next()) {
+//                Order b = new Order();
+//                b.setIDOrder(rs.getInt("IDOrder"));
+//                b.setIDUser(rs.getInt("IDUser"));
+//                b.setIDDrinks(rs.getInt("IDDrinks"));
+//                b.setIDGuest(rs.getInt("IDGuest"));
+//                b.setAmount(rs.getInt("Amount"));
+//                b.setNote(rs.getString("Note"));
+//                b.setTableNumber(rs.getInt("TableNumber"));
+//                b.setDate(rs.getString("Date"));
+//                
+//                listOrder.add(b);
+//            }
+//            return listOrder;
+//        } catch (SQLException ex) {
+//            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        return null;
+//    }
+//    public  int getmaxIDOrder(){
+//        Order b = new Order();
+//        try {
+//
+//            String sql = "SELECT TOP (1) IDOrder FROM [Orderoop] ORDER BY IDOrder DESC " ;
+//            Connection connection = getConnection();
+//            PreparedStatement ps = connection.prepareStatement(sql);
+//            ResultSet rs = ps.executeQuery();
+//            while (rs.next()) {       
+//                b.setIDOrder(rs.getInt("IDOrder"));
+//            }
+//            return b.getIDOrder();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        return 0;
+//    
+//    }
 }

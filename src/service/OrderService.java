@@ -32,4 +32,7 @@ public class OrderService {
     public  void removeDrinks(String IDDrinks){
         orderDAO.removeDrinks(IDDrinks);
     }
+//    public int getMaxIDOrder(){
+//        return  orderDAO.getmaxIDOrder();
+//    }
 }
