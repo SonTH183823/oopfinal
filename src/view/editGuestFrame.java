@@ -52,6 +52,7 @@ public class editGuestFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Quản Lý Bán Hàng");
 
         jButton2.setText("Lưu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {

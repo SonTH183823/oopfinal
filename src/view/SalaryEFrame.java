@@ -68,7 +68,7 @@ public class SalaryEFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Quản Lý Nhân Viên");
+        setTitle("Quản Lý Bán Hàng");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setText("Quản Lý Lương Nhân Viên");

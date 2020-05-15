@@ -87,7 +87,7 @@ public class addUserFrame extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Quản Lý User");
+        setTitle("Quản Lý Bán Hàng");
         setLocationByPlatform(true);
 
         BackButton.setText("Back");

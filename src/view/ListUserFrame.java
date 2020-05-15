@@ -53,7 +53,7 @@ public class ListUserFrame extends javax.swing.JFrame {
         refeshButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Quản Lý User");
+        setTitle("Quản Lý Bán Hàng");
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
 
@@ -149,7 +149,7 @@ public class ListUserFrame extends javax.swing.JFrame {
         });
 
         refeshButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        refeshButton.setText("Refesh");
+        refeshButton.setText("Refresh");
         refeshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refeshButtonActionPerformed(evt);

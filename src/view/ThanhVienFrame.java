@@ -58,7 +58,7 @@ public class ThanhVienFrame extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Thông tin thành viên");
+        setTitle("Quản Lý Bán Hàng");
         getContentPane().setLayout(new java.awt.CardLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));

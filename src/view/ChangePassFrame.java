@@ -50,7 +50,7 @@ public class ChangePassFrame extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Đổi Mật Khẩu");
+        setTitle("Quản Lý Bán Hàng");
 
         jButton1.setText("Hủy");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

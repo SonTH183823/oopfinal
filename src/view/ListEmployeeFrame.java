@@ -54,7 +54,7 @@ public class ListEmployeeFrame extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Quản Lý Nhân Viên");
+        setTitle("Quản Lý Bán Hàng");
 
         EmployeeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,7 +122,7 @@ public class ListEmployeeFrame extends javax.swing.JFrame {
             }
         });
 
-        refeshButton.setText("Refesh");
+        refeshButton.setText("Refresh");
         refeshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refeshButtonActionPerformed(evt);

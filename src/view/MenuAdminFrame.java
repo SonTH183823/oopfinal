@@ -335,7 +335,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel12.setText("Số Bàn");
 
-        Refesh.setText("Refesh");
+        Refesh.setText("Refresh");
         Refesh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RefeshActionPerformed(evt);
@@ -553,7 +553,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
         );
 
         refreshButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        refreshButton.setText("Refesh");
+        refreshButton.setText("Refresh");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);

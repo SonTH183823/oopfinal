@@ -91,7 +91,7 @@ public class editUserFrame extends javax.swing.JFrame {
         genderComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Quản Lý User");
+        setTitle("Quản Lý Bán Hàng");
 
         jLabel7.setText("Địa Chỉ");
 

@@ -68,6 +68,7 @@ public class EditSalaryFrame extends javax.swing.JFrame {
         jLabel7.setText("jLabel7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Quản Lý Bán Hàng");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setText("Sửa thông tin");

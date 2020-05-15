@@ -47,7 +47,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Quản Lý Khách Hàng");
+        setTitle("Quản Lý Bán Hàng");
         setBackground(new java.awt.Color(255, 255, 255));
 
         backButton.setText("Back");
@@ -130,7 +130,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
             }
         });
 
-        refeshButton.setText("Refesh");
+        refeshButton.setText("Refresh");
         refeshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refeshButtonActionPerformed(evt);
