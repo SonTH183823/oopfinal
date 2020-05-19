@@ -51,22 +51,33 @@ public class ListUserFrame extends javax.swing.JFrame {
         EditEButton = new javax.swing.JButton();
         removeEButton = new javax.swing.JButton();
         refeshButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản Lý Bán Hàng");
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
+        setPreferredSize(new java.awt.Dimension(830, 445));
+        getContentPane().setLayout(null);
 
+        BackButton.setBackground(new java.awt.Color(255, 190, 108));
+        BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Back.png"))); // NOI18N
         BackButton.setText("Back");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BackButton);
+        BackButton.setBounds(0, 0, 90, 33);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Quản Lý User");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(305, 10, 480, 39);
 
+        UserTable.setBackground(new java.awt.Color(255, 216, 148));
         UserTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -79,7 +90,7 @@ public class ListUserFrame extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -99,108 +110,86 @@ public class ListUserFrame extends javax.swing.JFrame {
             UserTable.getColumnModel().getColumn(0).setMinWidth(45);
             UserTable.getColumnModel().getColumn(0).setPreferredWidth(45);
             UserTable.getColumnModel().getColumn(0).setMaxWidth(45);
-            UserTable.getColumnModel().getColumn(1).setMinWidth(120);
-            UserTable.getColumnModel().getColumn(1).setPreferredWidth(120);
-            UserTable.getColumnModel().getColumn(1).setMaxWidth(120);
+            UserTable.getColumnModel().getColumn(1).setMinWidth(150);
+            UserTable.getColumnModel().getColumn(1).setPreferredWidth(150);
+            UserTable.getColumnModel().getColumn(1).setMaxWidth(150);
             UserTable.getColumnModel().getColumn(2).setMinWidth(50);
             UserTable.getColumnModel().getColumn(2).setPreferredWidth(50);
             UserTable.getColumnModel().getColumn(2).setMaxWidth(50);
-            UserTable.getColumnModel().getColumn(3).setMinWidth(85);
-            UserTable.getColumnModel().getColumn(3).setPreferredWidth(85);
-            UserTable.getColumnModel().getColumn(3).setMaxWidth(85);
-            UserTable.getColumnModel().getColumn(4).setMinWidth(75);
-            UserTable.getColumnModel().getColumn(4).setPreferredWidth(75);
-            UserTable.getColumnModel().getColumn(4).setMaxWidth(75);
+            UserTable.getColumnModel().getColumn(3).setMinWidth(100);
+            UserTable.getColumnModel().getColumn(3).setPreferredWidth(100);
+            UserTable.getColumnModel().getColumn(3).setMaxWidth(100);
+            UserTable.getColumnModel().getColumn(4).setMinWidth(100);
+            UserTable.getColumnModel().getColumn(4).setPreferredWidth(100);
+            UserTable.getColumnModel().getColumn(4).setMaxWidth(100);
             UserTable.getColumnModel().getColumn(5).setMinWidth(80);
             UserTable.getColumnModel().getColumn(5).setPreferredWidth(80);
             UserTable.getColumnModel().getColumn(5).setMaxWidth(80);
-            UserTable.getColumnModel().getColumn(6).setMinWidth(80);
-            UserTable.getColumnModel().getColumn(6).setPreferredWidth(80);
-            UserTable.getColumnModel().getColumn(6).setMaxWidth(80);
+            UserTable.getColumnModel().getColumn(6).setMinWidth(100);
+            UserTable.getColumnModel().getColumn(6).setPreferredWidth(100);
+            UserTable.getColumnModel().getColumn(6).setMaxWidth(100);
             UserTable.getColumnModel().getColumn(7).setResizable(false);
-            UserTable.getColumnModel().getColumn(7).setPreferredWidth(75);
-            UserTable.getColumnModel().getColumn(8).setMinWidth(80);
+            UserTable.getColumnModel().getColumn(7).setPreferredWidth(100);
+            UserTable.getColumnModel().getColumn(8).setResizable(false);
             UserTable.getColumnModel().getColumn(8).setPreferredWidth(80);
-            UserTable.getColumnModel().getColumn(8).setMaxWidth(80);
         }
 
-        addEButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(10, 78, 798, 260);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(0, 50, 820, 10);
+
+        addEButton.setBackground(new java.awt.Color(255, 190, 108));
+        addEButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        addEButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/add.png"))); // NOI18N
         addEButton.setText("Thêm");
         addEButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addEButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(addEButton);
+        addEButton.setBounds(10, 355, 110, 40);
 
-        EditEButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        EditEButton.setBackground(new java.awt.Color(255, 190, 108));
+        EditEButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        EditEButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/edit.png"))); // NOI18N
         EditEButton.setText("Sửa");
         EditEButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditEButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(EditEButton);
+        EditEButton.setBounds(240, 360, 110, 40);
 
-        removeEButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        removeEButton.setBackground(new java.awt.Color(255, 190, 108));
+        removeEButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        removeEButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/xoa.png"))); // NOI18N
         removeEButton.setText("Xóa");
         removeEButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeEButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(removeEButton);
+        removeEButton.setBounds(480, 360, 100, 40);
 
-        refeshButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        refeshButton.setBackground(new java.awt.Color(255, 190, 108));
+        refeshButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        refeshButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/refresh1.png"))); // NOI18N
         refeshButton.setText("Refresh");
         refeshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refeshButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(refeshButton);
+        refeshButton.setBounds(690, 360, 120, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BackButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(addEButton, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(90, 90, 90)
-                                .addComponent(EditEButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(removeEButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(94, 94, 94)
-                                .addComponent(refeshButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1))))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BackButton)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(refeshButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(removeEButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(addEButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(EditEButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(15, 15, 15))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/anhgo.jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 840, 440);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -276,6 +265,7 @@ public class ListUserFrame extends javax.swing.JFrame {
     private javax.swing.JTable UserTable;
     private javax.swing.JButton addEButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton refeshButton;
