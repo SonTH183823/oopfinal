@@ -60,7 +60,7 @@ public class ListEmployeeFrame extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         EmployeeTable.setBackground(new java.awt.Color(255, 216, 148));
-        EmployeeTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        EmployeeTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         EmployeeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
