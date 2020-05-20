@@ -54,34 +54,37 @@ public class LogInFrame extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel1.setText("Tài Khoản");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(40, 210, 80, 20);
+        jLabel1.setBounds(80, 250, 90, 30);
 
+        userNameTextField.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         userNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameTextFieldActionPerformed(evt);
             }
         });
         jPanel2.add(userNameTextField);
-        userNameTextField.setBounds(130, 210, 170, 20);
+        userNameTextField.setBounds(190, 250, 210, 30);
 
+        PasswordField.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordFieldActionPerformed(evt);
             }
         });
         jPanel2.add(PasswordField);
-        PasswordField.setBounds(130, 250, 170, 20);
+        PasswordField.setBounds(190, 300, 210, 30);
 
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel2.setText("Mật Khẩu");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(40, 250, 80, 20);
+        jLabel2.setBounds(80, 300, 90, 30);
 
         jButton1.setBackground(new java.awt.Color(255, 190, 108));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
         jButton1.setText("Thoát");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,10 +92,11 @@ public class LogInFrame extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(40, 290, 78, 30);
+        jButton1.setBounds(80, 360, 120, 40);
 
         LogInButton.setBackground(new java.awt.Color(255, 190, 108));
-        LogInButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LogInButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LogInButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/interface.png"))); // NOI18N
         LogInButton.setText("Đăng Nhập");
         LogInButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,21 +104,21 @@ public class LogInFrame extends javax.swing.JFrame {
             }
         });
         jPanel2.add(LogInButton);
-        LogInButton.setBounds(200, 290, 102, 30);
+        LogInButton.setBounds(260, 360, 140, 40);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/login.jpeg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsz_loginfinal.jpg"))); // NOI18N
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(0, 0, 350, 340);
+        jLabel3.setBounds(0, 0, 490, 470);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
