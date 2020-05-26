@@ -251,13 +251,14 @@ public class ManageDrinksFrame extends javax.swing.JFrame {
 
             List<Drinks> listD  = drinksService.getAllDrinks();
         listD.forEach((d) -> {
-            defaultTableModel.addRow(new Object[]{d.getIDdrinks(), d.getName(), d.getPrice()});
+            defaultTableModel.addRow(new Object[]{d.getIDdrinks(), d.getName(), d.getPrice()+"đ"});
         });
         }else{
-            String a= searchGoodsTextField.getText().replaceAll("\\s","");
+            String a= searchGoodsTextField.getText();
+            //.replaceAll("\\s","");
             List<Drinks> listD  = drinksService.getDrinksByName(a);
         listD.forEach((d) -> {
-            defaultTableModel.addRow(new Object[]{d.getIDdrinks(), d.getName(), d.getPrice()});
+            defaultTableModel.addRow(new Object[]{d.getIDdrinks(), d.getName(), d.getPrice()+"đ"});
         });
         }
     }//GEN-LAST:event_searchGoodsButtonActionPerformed

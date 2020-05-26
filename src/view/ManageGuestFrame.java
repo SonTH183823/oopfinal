@@ -221,7 +221,8 @@ public class ManageGuestFrame extends javax.swing.JFrame {
                     g.getIDGuest(), g.getName(), g.getPhone(), g.getAccumulatedPoints()});
             }
         } else {
-             String a= searchGuestTextField.getText().replaceAll("\\s","");
+             String a= searchGuestTextField.getText();
+                     //.replaceAll("\\s","");
              List<Guest> listGuest = guestService.getGuestsByName(a);
             for (Guest g : listGuest) {
                 defaultTableModel.addRow(new Object[]{

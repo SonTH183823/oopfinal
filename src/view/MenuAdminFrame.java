@@ -200,7 +200,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
         NameLabel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 3, 18)); // NOI18N
         NameLabel.setText("Xin chào, Nhung!");
         jPanel7.add(NameLabel);
-        NameLabel.setBounds(690, 0, 190, 30);
+        NameLabel.setBounds(710, 0, 170, 30);
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 190, 108));
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);

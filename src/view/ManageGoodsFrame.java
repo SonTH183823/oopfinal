@@ -273,15 +273,16 @@ public class ManageGoodsFrame extends javax.swing.JFrame {
         goodses.forEach((goods) -> {
             int TotalMoney = goods.getAmount()*goods.getPrice();
             defaultTableModel.addRow(new Object[]{goods.getIDGoods(),goods.getNameGoods(),
-                goods.getPrice(),goods.getAmount(),goods.getImportDate(),TotalMoney});
+                goods.getPrice(),goods.getAmount(),goods.getImportDate(),TotalMoney+"đ"});
         });
         }else{
-           String a= searchGoodsTextField.getText().replaceAll("\\s","");
+           String a= searchGoodsTextField.getText();
+                   //.replaceAll("\\s","");
             List<Goods> goodses  = goodsService.getGoodsByName(a);
             goodses.forEach((goods) -> {
             int TotalMoney = goods.getAmount()*goods.getPrice();
             defaultTableModel.addRow(new Object[]{goods.getIDGoods(),goods.getNameGoods(),
-                goods.getPrice()+"đ",goods.getAmount(),goods.getImportDate(),TotalMoney});
+                goods.getPrice()+"đ",goods.getAmount(),goods.getImportDate(),TotalMoney+"đ"});
         });
         }
     }//GEN-LAST:event_searchGoodsButtonActionPerformed
