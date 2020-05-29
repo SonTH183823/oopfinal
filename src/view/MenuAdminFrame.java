@@ -188,6 +188,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(255, 190, 108));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton5.setText("Nhóm Phát Triển");
+        jButton5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/xoa.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -200,7 +201,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
         NameLabel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 3, 18)); // NOI18N
         NameLabel.setText("Xin chào, Nhung!");
         jPanel7.add(NameLabel);
-        NameLabel.setBounds(710, 0, 170, 30);
+        NameLabel.setBounds(720, 0, 160, 30);
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 190, 108));
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -357,6 +358,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        listchoiceTable.setSelectionBackground(new java.awt.Color(255, 153, 51));
         listchoiceTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(listchoiceTable);
         if (listchoiceTable.getColumnModel().getColumnCount() > 0) {
@@ -388,6 +390,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
         nameList.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         nameList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         nameList.setToolTipText("");
+        nameList.setSelectionBackground(new java.awt.Color(255, 153, 51));
         nameList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nameListMouseClicked(evt);
@@ -566,6 +569,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        listBillTable.setSelectionBackground(new java.awt.Color(255, 153, 51));
         listBillTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(listBillTable);
         if (listBillTable.getColumnModel().getColumnCount() > 0) {
@@ -636,7 +640,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(20, 50, 400, 80);
+        jButton1.setBounds(20, 50, 390, 80);
 
         jButton2.setBackground(new java.awt.Color(255, 216, 148));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -648,7 +652,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(475, 170, 380, 80);
+        jButton2.setBounds(475, 170, 390, 80);
 
         jButton3.setBackground(new java.awt.Color(255, 216, 148));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -660,7 +664,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(20, 168, 400, 80);
+        jButton3.setBounds(20, 168, 390, 80);
 
         jButton4.setBackground(new java.awt.Color(255, 216, 148));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -684,7 +688,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ManageDrinksjButton);
-        ManageDrinksjButton.setBounds(475, 50, 380, 80);
+        ManageDrinksjButton.setBounds(475, 50, 390, 80);
 
         jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel23.setText("Danh Sách");
@@ -710,7 +714,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
         TaiKhoanPanel.add(ChangePassButton);
-        ChangePassButton.setBounds(16, 328, 170, 50);
+        ChangePassButton.setBounds(16, 328, 190, 50);
 
         ThoatButton.setBackground(new java.awt.Color(255, 190, 108));
         ThoatButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -722,7 +726,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
         TaiKhoanPanel.add(ThoatButton);
-        ThoatButton.setBounds(709, 329, 150, 49);
+        ThoatButton.setBounds(670, 330, 190, 50);
 
         jPanel5.setBackground(new java.awt.Color(255, 216, 148));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -846,7 +850,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
             }
         });
         TaiKhoanPanel.add(editInforButton);
-        editInforButton.setBounds(350, 330, 190, 49);
+        editInforButton.setBounds(350, 330, 190, 50);
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel21.setText("Thông Tin Tài Khoản");
@@ -901,7 +905,7 @@ public class MenuAdminFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         new ChangePassFrame(user.getIDUser()).setVisible(true);
-        this.dispose();
+        //this.dispose();
     }//GEN-LAST:event_ChangePassButtonActionPerformed
 
     private void ManageDrinksjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageDrinksjButtonActionPerformed

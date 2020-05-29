@@ -123,6 +123,7 @@ public class ManageDrinksFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        DrinksTable1.setSelectionBackground(new java.awt.Color(255, 153, 51));
         DrinksTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(DrinksTable1);
         if (DrinksTable1.getColumnModel().getColumnCount() > 0) {
@@ -177,7 +178,7 @@ public class ManageDrinksFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(addDrinks);
-        addDrinks.setBounds(490, 67, 132, 41);
+        addDrinks.setBounds(490, 67, 135, 45);
 
         editDrinks.setBackground(new java.awt.Color(255, 190, 108));
         editDrinks.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -189,7 +190,7 @@ public class ManageDrinksFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(editDrinks);
-        editDrinks.setBounds(490, 134, 132, 44);
+        editDrinks.setBounds(490, 134, 135, 45);
 
         removeDrinksButton.setBackground(new java.awt.Color(255, 190, 108));
         removeDrinksButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -201,7 +202,7 @@ public class ManageDrinksFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(removeDrinksButton);
-        removeDrinksButton.setBounds(490, 196, 132, 47);
+        removeDrinksButton.setBounds(490, 200, 135, 45);
 
         refeshButton6.setBackground(new java.awt.Color(255, 190, 108));
         refeshButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -213,7 +214,7 @@ public class ManageDrinksFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(refeshButton6);
-        refeshButton6.setBounds(490, 270, 132, 41);
+        refeshButton6.setBounds(490, 270, 135, 45);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Quản Lý Đồ Uống");

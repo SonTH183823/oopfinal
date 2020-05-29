@@ -47,6 +47,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
         refeshButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
+        jDayChooser1 = new com.toedter.calendar.JDayChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản Lý Bán Hàng");
@@ -55,7 +56,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         backButton.setBackground(new java.awt.Color(255, 190, 108));
-        backButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        backButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Back.png"))); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +65,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(backButton);
-        backButton.setBounds(0, 0, 90, 30);
+        backButton.setBounds(0, 0, 90, 40);
 
         jPanel2.setBackground(new java.awt.Color(255, 216, 148));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -115,6 +116,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        GuestTable1.setSelectionBackground(new java.awt.Color(255, 153, 51));
         jScrollPane1.setViewportView(GuestTable1);
         if (GuestTable1.getColumnModel().getColumnCount() > 0) {
             GuestTable1.getColumnModel().getColumn(0).setMinWidth(50);
@@ -160,7 +162,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Quản Lý Khách Hàng");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(220, 0, 270, 39);
+        jLabel1.setBounds(220, 0, 270, 50);
 
         eidtButton.setBackground(new java.awt.Color(255, 190, 108));
         eidtButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -172,7 +174,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(eidtButton);
-        eidtButton.setBounds(508, 70, 150, 56);
+        eidtButton.setBounds(508, 70, 150, 60);
 
         removeButton.setBackground(new java.awt.Color(255, 190, 108));
         removeButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -184,7 +186,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(removeButton);
-        removeButton.setBounds(508, 160, 150, 57);
+        removeButton.setBounds(510, 160, 150, 60);
 
         refeshButton.setBackground(new java.awt.Color(255, 190, 108));
         refeshButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -196,13 +198,15 @@ public class ManageGuestFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(refeshButton);
-        refeshButton.setBounds(504, 247, 150, 57);
+        refeshButton.setBounds(510, 240, 150, 60);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(0, 40, 670, 10);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/anhgo.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(0, 0, 680, 320);
+        getContentPane().add(jDayChooser1);
+        jDayChooser1.setBounds(760, 200, 182, 133);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -302,6 +306,7 @@ public class ManageGuestFrame extends javax.swing.JFrame {
     private javax.swing.JTable GuestTable1;
     private javax.swing.JButton backButton;
     private javax.swing.JButton eidtButton;
+    private com.toedter.calendar.JDayChooser jDayChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

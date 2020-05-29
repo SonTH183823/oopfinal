@@ -54,10 +54,11 @@ public class LogInFrame extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Tài Khoản");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(80, 250, 90, 30);
+        jLabel1.setBounds(70, 250, 100, 30);
 
         userNameTextField.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         userNameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -77,13 +78,14 @@ public class LogInFrame extends javax.swing.JFrame {
         jPanel2.add(PasswordField);
         PasswordField.setBounds(190, 300, 210, 30);
 
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Mật Khẩu");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(80, 300, 90, 30);
+        jLabel2.setBounds(70, 300, 100, 30);
 
         jButton1.setBackground(new java.awt.Color(255, 190, 108));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
         jButton1.setText("Thoát");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -92,10 +94,10 @@ public class LogInFrame extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(80, 360, 120, 40);
+        jButton1.setBounds(70, 360, 140, 40);
 
         LogInButton.setBackground(new java.awt.Color(255, 190, 108));
-        LogInButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LogInButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         LogInButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/interface.png"))); // NOI18N
         LogInButton.setText("Đăng Nhập");
         LogInButton.addActionListener(new java.awt.event.ActionListener() {

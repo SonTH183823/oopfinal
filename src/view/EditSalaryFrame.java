@@ -71,16 +71,16 @@ public class EditSalaryFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản Lý Bán Hàng");
-        setPreferredSize(new java.awt.Dimension(335, 270));
+        setPreferredSize(new java.awt.Dimension(350, 270));
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Sửa thông tin");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(97, 0, 214, 41);
+        jLabel1.setBounds(91, 0, 220, 50);
 
         BackButton.setBackground(new java.awt.Color(255, 190, 108));
-        BackButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Back.png"))); // NOI18N
         BackButton.setText("Back");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -89,21 +89,21 @@ public class EditSalaryFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BackButton);
-        BackButton.setBounds(0, 0, 90, 33);
+        BackButton.setBounds(40, 190, 100, 30);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(10, 47, 301, 14);
+        jSeparator1.setBounds(10, 47, 320, 14);
 
         okButton.setBackground(new java.awt.Color(255, 190, 108));
         okButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         okButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ok.png"))); // NOI18N
-        okButton.setText("OK");
+        okButton.setText("Lưu");
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
             }
         });
         getContentPane().add(okButton);
-        okButton.setBounds(130, 190, 80, 30);
+        okButton.setBounds(200, 190, 100, 30);
 
         jPanel1.setBackground(new java.awt.Color(255, 216, 148));
 
@@ -118,7 +118,7 @@ public class EditSalaryFrame extends javax.swing.JFrame {
 
         jLabel13.setText("Số  Tiền/Ca");
 
-        jLabel14.setText("VNĐ");
+        jLabel14.setText("đ");
 
         jLabel15.setText("Bonus");
 
@@ -128,7 +128,7 @@ public class EditSalaryFrame extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -145,13 +145,14 @@ public class EditSalaryFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(ShiftTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(MonthTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel13)
                         .addComponent(jLabel15))
+                    .addGap(9, 9, 9)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(tien1caTextField)
-                        .addComponent(BonusTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BonusTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                        .addComponent(tien1caTextField))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel16)
@@ -191,7 +192,7 @@ public class EditSalaryFrame extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(20, 66, 278, 109);
+        jPanel1.setBounds(20, 66, 300, 109);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/anhgo.jpg"))); // NOI18N
         getContentPane().add(jLabel2);

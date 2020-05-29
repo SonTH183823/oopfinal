@@ -70,7 +70,7 @@ public class ChangePassFrame extends javax.swing.JFrame {
         okButton.setBackground(new java.awt.Color(255, 190, 108));
         okButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         okButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ok.png"))); // NOI18N
-        okButton.setText("Ok");
+        okButton.setText("Lưu");
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
@@ -188,7 +188,7 @@ public class ChangePassFrame extends javax.swing.JFrame {
                 userService.changPassUser(user);
                 JOptionPane.showMessageDialog(rootPane, "Đổi mật khẩu thành công!");
                 
-                new MenuAdminFrame(user.getIDUser()).setVisible(true);
+                //new MenuAdminFrame(user.getIDUser()).setVisible(true);
                 this.dispose();
             }
             
@@ -204,7 +204,7 @@ public class ChangePassFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new MenuAdminFrame(user.getIDUser()).setVisible(true);
+        //new MenuAdminFrame(user.getIDUser()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

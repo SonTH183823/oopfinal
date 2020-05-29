@@ -100,14 +100,14 @@ public class editUserFrame extends javax.swing.JFrame {
         BackButton.setBackground(new java.awt.Color(255, 190, 108));
         BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Back.png"))); // NOI18N
-        BackButton.setText("Back");
+        BackButton.setText("Hủy");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
             }
         });
         getContentPane().add(BackButton);
-        BackButton.setBounds(0, 0, 110, 33);
+        BackButton.setBounds(100, 280, 100, 35);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Sửa Thông Tin");
@@ -292,7 +292,7 @@ public class editUserFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(editEmployeeButton1);
-        editEmployeeButton1.setBounds(230, 280, 90, 30);
+        editEmployeeButton1.setBounds(350, 280, 100, 35);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/anhgo.jpg"))); // NOI18N
         getContentPane().add(jLabel2);

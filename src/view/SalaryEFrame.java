@@ -121,6 +121,7 @@ public class SalaryEFrame extends javax.swing.JFrame {
         SalaryETable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         SalaryETable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         SalaryETable.setInheritsPopupMenu(true);
+        SalaryETable.setSelectionBackground(new java.awt.Color(255, 153, 51));
         SalaryETable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(SalaryETable);
         if (SalaryETable.getColumnModel().getColumnCount() > 0) {

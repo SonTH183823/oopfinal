@@ -85,6 +85,7 @@ public class editGoodsFrame extends javax.swing.JFrame {
         jLabel7.setText("Ngày Nhập");
 
         IDGoodsTextField.setEditable(false);
+        IDGoodsTextField.setBackground(new java.awt.Color(255, 190, 108));
         IDGoodsTextField.setText("1");
         IDGoodsTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,7 +170,7 @@ public class editGoodsFrame extends javax.swing.JFrame {
         jPanel3.setBounds(25, 69, 480, 153);
 
         jButton2.setBackground(new java.awt.Color(255, 190, 108));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ok.png"))); // NOI18N
         jButton2.setText("Lưu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +179,7 @@ public class editGoodsFrame extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(224, 233, 89, 30);
+        jButton2.setBounds(350, 230, 90, 40);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Sửa Thông Tin");
@@ -186,7 +187,7 @@ public class editGoodsFrame extends javax.swing.JFrame {
         jLabel1.setBounds(182, 6, 290, 29);
 
         jButton1.setBackground(new java.awt.Color(255, 190, 108));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Back.png"))); // NOI18N
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +196,7 @@ public class editGoodsFrame extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(2, 2, 87, 33);
+        jButton1.setBounds(100, 230, 90, 40);
         jPanel2.add(jSeparator1);
         jSeparator1.setBounds(2, 41, 536, 10);
 

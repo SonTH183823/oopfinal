@@ -87,6 +87,7 @@ public class ListEmployeeFrame extends javax.swing.JFrame {
         EmployeeTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         EmployeeTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         EmployeeTable.setInheritsPopupMenu(true);
+        EmployeeTable.setSelectionBackground(new java.awt.Color(255, 153, 51));
         EmployeeTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(EmployeeTable);
         if (EmployeeTable.getColumnModel().getColumnCount() > 0) {

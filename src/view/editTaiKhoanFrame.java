@@ -67,7 +67,7 @@ public class editTaiKhoanFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản Lý Bán Hàng");
-        setPreferredSize(new java.awt.Dimension(430, 275));
+        setPreferredSize(new java.awt.Dimension(430, 290));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 216, 148));
@@ -173,7 +173,7 @@ public class editTaiKhoanFrame extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(24, 34, 367, 160);
+        jPanel1.setBounds(24, 34, 367, 170);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Sửa thông tin");
@@ -190,19 +190,19 @@ public class editTaiKhoanFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(HuyButton);
-        HuyButton.setBounds(70, 200, 90, 30);
+        HuyButton.setBounds(70, 210, 90, 30);
 
         OKButton.setBackground(new java.awt.Color(255, 190, 108));
         OKButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         OKButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ok.png"))); // NOI18N
-        OKButton.setText("Ok");
+        OKButton.setText("Lưu");
         OKButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OKButtonActionPerformed(evt);
             }
         });
         getContentPane().add(OKButton);
-        OKButton.setBounds(250, 200, 90, 30);
+        OKButton.setBounds(250, 210, 90, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/anhgo.jpg"))); // NOI18N
         getContentPane().add(jLabel2);

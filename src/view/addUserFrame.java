@@ -91,20 +91,20 @@ public class addUserFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản Lý Bán Hàng");
         setLocationByPlatform(true);
-        setPreferredSize(new java.awt.Dimension(545, 355));
+        setPreferredSize(new java.awt.Dimension(545, 360));
         getContentPane().setLayout(null);
 
         BackButton.setBackground(new java.awt.Color(255, 190, 108));
-        BackButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Back.png"))); // NOI18N
-        BackButton.setText("Back");
+        BackButton.setText("Hủy");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
             }
         });
         getContentPane().add(BackButton);
-        BackButton.setBounds(0, 0, 100, 33);
+        BackButton.setBounds(110, 280, 100, 35);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Thêm User");
@@ -112,7 +112,7 @@ public class addUserFrame extends javax.swing.JFrame {
         jLabel1.setBounds(180, 0, 207, 38);
 
         addEmployeeButton.setBackground(new java.awt.Color(255, 190, 108));
-        addEmployeeButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        addEmployeeButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         addEmployeeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ok.png"))); // NOI18N
         addEmployeeButton.setText("Lưu");
         addEmployeeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +121,7 @@ public class addUserFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(addEmployeeButton);
-        addEmployeeButton.setBounds(203, 279, 84, 32);
+        addEmployeeButton.setBounds(310, 280, 100, 35);
 
         jPanel1.setBackground(new java.awt.Color(255, 216, 148));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());

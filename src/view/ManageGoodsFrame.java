@@ -129,6 +129,7 @@ public class ManageGoodsFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        GoodsTable1.setSelectionBackground(new java.awt.Color(255, 153, 51));
         jScrollPane1.setViewportView(GoodsTable1);
         if (GoodsTable1.getColumnModel().getColumnCount() > 0) {
             GoodsTable1.getColumnModel().getColumn(0).setMinWidth(50);
@@ -199,7 +200,7 @@ public class ManageGoodsFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(removeGoodsButton4);
-        removeGoodsButton4.setBounds(390, 350, 90, 39);
+        removeGoodsButton4.setBounds(390, 350, 110, 39);
 
         editGoodsButton3.setBackground(new java.awt.Color(255, 190, 108));
         editGoodsButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -211,7 +212,7 @@ public class ManageGoodsFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(editGoodsButton3);
-        editGoodsButton3.setBounds(200, 350, 90, 39);
+        editGoodsButton3.setBounds(200, 350, 110, 39);
 
         addGoodsButton.setBackground(new java.awt.Color(255, 190, 108));
         addGoodsButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -223,7 +224,7 @@ public class ManageGoodsFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(addGoodsButton);
-        addGoodsButton.setBounds(20, 350, 90, 39);
+        addGoodsButton.setBounds(20, 350, 110, 39);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Quản Lý Hàng Hóa");

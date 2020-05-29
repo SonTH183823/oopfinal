@@ -54,11 +54,11 @@ public class editGuestFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản Lý Bán Hàng");
-        setPreferredSize(new java.awt.Dimension(525, 260));
+        setPreferredSize(new java.awt.Dimension(535, 280));
         getContentPane().setLayout(null);
 
         jButton2.setBackground(new java.awt.Color(255, 190, 108));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ok.png"))); // NOI18N
         jButton2.setText("Lưu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +67,7 @@ public class editGuestFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(208, 187, 90, 30);
+        jButton2.setBounds(340, 190, 90, 40);
 
         jPanel3.setBackground(new java.awt.Color(255, 216, 148));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -138,21 +138,21 @@ public class editGuestFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Sửa Thông Tin");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(172, 0, 180, 30);
+        jLabel1.setBounds(172, 0, 180, 40);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(0, 44, 512, 10);
 
         jButton1.setBackground(new java.awt.Color(255, 190, 108));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Back.png"))); // NOI18N
-        jButton1.setText("Back");
+        jButton1.setText("Hủy");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(0, 0, 87, 33);
+        jButton1.setBounds(110, 190, 90, 40);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/anhgo.jpg"))); // NOI18N
         getContentPane().add(jLabel2);

@@ -57,7 +57,7 @@ public class ListUserFrame extends javax.swing.JFrame {
         setTitle("Quản Lý Bán Hàng");
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
-        setPreferredSize(new java.awt.Dimension(830, 445));
+        setPreferredSize(new java.awt.Dimension(830, 450));
         getContentPane().setLayout(null);
 
         BackButton.setBackground(new java.awt.Color(255, 190, 108));
@@ -70,7 +70,7 @@ public class ListUserFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BackButton);
-        BackButton.setBounds(0, 0, 90, 33);
+        BackButton.setBounds(0, 0, 90, 40);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Quản Lý User");
@@ -104,6 +104,7 @@ public class ListUserFrame extends javax.swing.JFrame {
         UserTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         UserTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         UserTable.setInheritsPopupMenu(true);
+        UserTable.setSelectionBackground(new java.awt.Color(255, 153, 51));
         UserTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(UserTable);
         if (UserTable.getColumnModel().getColumnCount() > 0) {
@@ -149,7 +150,7 @@ public class ListUserFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(addEButton);
-        addEButton.setBounds(10, 355, 110, 40);
+        addEButton.setBounds(10, 355, 120, 40);
 
         EditEButton.setBackground(new java.awt.Color(255, 190, 108));
         EditEButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -161,7 +162,7 @@ public class ListUserFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(EditEButton);
-        EditEButton.setBounds(240, 360, 110, 40);
+        EditEButton.setBounds(230, 360, 120, 40);
 
         removeEButton.setBackground(new java.awt.Color(255, 190, 108));
         removeEButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -173,7 +174,7 @@ public class ListUserFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(removeEButton);
-        removeEButton.setBounds(480, 360, 100, 40);
+        removeEButton.setBounds(470, 360, 120, 40);
 
         refeshButton.setBackground(new java.awt.Color(255, 190, 108));
         refeshButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

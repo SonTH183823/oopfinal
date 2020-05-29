@@ -159,7 +159,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
         NameLabel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 3, 18)); // NOI18N
         NameLabel.setText("Xin chào, Nhung!");
         jPanel7.add(NameLabel);
-        NameLabel.setBounds(690, 0, 190, 30);
+        NameLabel.setBounds(720, 0, 160, 30);
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 190, 108));
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -314,6 +314,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        listchoiceTable.setSelectionBackground(new java.awt.Color(255, 153, 51));
         listchoiceTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(listchoiceTable);
 
@@ -340,6 +341,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
         nameList.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         nameList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         nameList.setToolTipText("");
+        nameList.setSelectionBackground(new java.awt.Color(255, 153, 51));
         nameList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nameListMouseClicked(evt);
@@ -435,7 +437,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
             }
         });
         TaiKhoanPanel.add(ChangePassButton);
-        ChangePassButton.setBounds(16, 328, 170, 50);
+        ChangePassButton.setBounds(16, 328, 190, 50);
 
         ThoatButton.setBackground(new java.awt.Color(255, 190, 108));
         ThoatButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -447,7 +449,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
             }
         });
         TaiKhoanPanel.add(ThoatButton);
-        ThoatButton.setBounds(709, 329, 150, 49);
+        ThoatButton.setBounds(670, 330, 190, 50);
 
         jPanel5.setBackground(new java.awt.Color(255, 216, 148));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -571,7 +573,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
             }
         });
         TaiKhoanPanel.add(editInforButton);
-        editInforButton.setBounds(350, 330, 190, 49);
+        editInforButton.setBounds(350, 330, 190, 50);
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel21.setText("Thông Tin Tài Khoản");
@@ -823,7 +825,7 @@ public class MenuEmployeeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         new ChangePassFrame(user.getIDUser()).setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_ChangePassButtonActionPerformed
 
     private void ThoatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThoatButtonActionPerformed
