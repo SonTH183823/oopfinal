@@ -17,15 +17,15 @@
   - Chạy QLBHoop16 trong thư mục dist, nếu gặp lỗi không đăng nhập được thì xóa file đi và vào Netbeans build lại và chạy.
 * Một số hình ảnh chương trình demo:
 
-![Capture](https://user-images.githubusercontent.com/62825098/119698729-bad97380-be7b-11eb-91f5-08388538ccb6.JPG)
+![image](https://user-images.githubusercontent.com/62825098/119699597-887c4600-be7c-11eb-88dc-03cdd7220cf4.png)
 
-![image](https://user-images.githubusercontent.com/62825098/119698849-d9d80580-be7b-11eb-9e28-c0d6bea68aec.png)
+![image](https://user-images.githubusercontent.com/62825098/119699620-8d40fa00-be7c-11eb-9aa9-06556205649d.png)
 
-![image](https://user-images.githubusercontent.com/62825098/119698862-de9cb980-be7b-11eb-966f-5c3c6c0022cc.png)
+![image](https://user-images.githubusercontent.com/62825098/119699654-96ca6200-be7c-11eb-8bcc-e04fd01df618.png)
 
-![image](https://user-images.githubusercontent.com/62825098/119699034-fe33e200-be7b-11eb-9239-b6b9888d067e.png)
+![image](https://user-images.githubusercontent.com/62825098/119699720-a5187e00-be7c-11eb-8487-761a69f8b1ae.png)
 
-![image](https://user-images.githubusercontent.com/62825098/119699280-2e7b8080-be7c-11eb-95da-abbdfaab5a3d.png)
+![image](https://user-images.githubusercontent.com/62825098/119699745-ac3f8c00-be7c-11eb-8d64-00871aa4586f.png)
 
 ![image](https://user-images.githubusercontent.com/62825098/119699152-0db32b00-be7c-11eb-8871-709e838c726d.png)
 
